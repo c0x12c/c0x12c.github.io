@@ -1,12 +1,17 @@
-# c0x12c.github.io
+---
+layout: default
+title: c0x12c
+---
 
-Official website for **c0x12c** — built with [Jekyll](https://jekyllrb.com/) and the [Architect](https://github.com/pages-themes/architect) theme, hosted on [GitHub Pages](https://pages.github.com/).
+# c0x12c
+
+Welcome to the official site for **c0x12c**.
 
 ## Getting Started
 
 ### Prerequisites
 
-- Ruby 3.3+ (Ruby 4.x is not yet supported by `github-pages`)
+- Ruby 3.3+ (Ruby 4.x is not yet supported)
 - Bundler (`gem install bundler`)
 
 ### Local Development
