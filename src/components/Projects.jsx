@@ -10,8 +10,8 @@ const PROJECTS = [
   },
   {
     icon: '\u{1f4c4}',
-    name: 'pageindex-jvm',
-    url: 'https://github.com/c0x12c/pageindex-jvm',
+    name: 'pageindex-kt',
+    url: 'https://github.com/c0x12c/pageindex-kt',
     stars: 11,
     desc: 'LLM-powered document indexing for the JVM. Builds tree-structured indexes like a table of contents. Uses LLM reasoning to navigate -- no vector database, no chunking needed.',
     lang: 'Kotlin',
