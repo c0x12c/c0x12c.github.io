@@ -11,15 +11,3 @@ updates:
       github-actions:
         patterns:
           - '*'
-
-  - package-ecosystem: "terraform"
-    directories:
-      - "terraform/live/shared/**/*"
-    schedule:
-      interval: "monthly"
-    commit-message:
-      prefix: 'deps-terraform:'
-    groups:
-      terraform:
-        patterns:
-          - '*'
