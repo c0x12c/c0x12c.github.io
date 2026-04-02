@@ -59,16 +59,10 @@ function isToday(dateStr) {
   return isSameDay(new Date(dateStr), new Date())
 }
 
-function ArrowIcon() {
-  return (
-    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">
-      <path d="M3 8h10M9 4l4 4-4 4" />
-    </svg>
-  )
-}
-
-function getEventUrl(activity) {
-  return activity.online_url || `https://platform.spartan-dev.io/p/activities/${activity.slug}`
+function StatusLabel({ past, happeningToday }) {
+  if (happeningToday) return <span className="event-status live">Live</span>
+  if (past) return <span className="event-status ended">Ended</span>
+  return <span className="event-status upcoming">Upcoming</span>
 }
 
 /* ── Calendar ── */
@@ -198,10 +192,6 @@ function UpNextCard({ activity }) {
       {activity.registration_count > 0 && (
         <div className="upnext-registrations">{activity.registration_count} registered</div>
       )}
-      <a href={getEventUrl(activity)} target="_blank" rel="noreferrer" className="btn btn-primary upnext-btn">
-        Join Event
-        <ArrowIcon />
-      </a>
     </div>
   )
 }
@@ -211,6 +201,7 @@ function EventCard({ activity }) {
   const color = CATEGORY_COLORS[activity.category] || CATEGORY_COLORS.other
   const label = CATEGORY_LABELS[activity.category] || 'Event'
   const past = new Date(activity.scheduled_at) < new Date()
+  const happeningToday = isToday(activity.scheduled_at)
 
   return (
     <div className={`event-card ${past ? 'past' : ''}`}>
@@ -233,10 +224,7 @@ function EventCard({ activity }) {
           {activity.registration_count > 0 && (
             <span className="event-registrations">{activity.registration_count} joined</span>
           )}
-          <a href={getEventUrl(activity)} target="_blank" rel="noreferrer" className="event-join">
-            {past ? 'View recap' : 'Join event'}
-            <ArrowIcon />
-          </a>
+          <StatusLabel past={past} happeningToday={happeningToday} />
         </div>
       </div>
     </div>

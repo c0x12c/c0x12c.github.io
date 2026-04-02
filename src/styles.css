@@ -774,22 +774,7 @@ a:hover {
 .upnext-registrations {
   font-size: 13px;
   color: var(--text-muted);
-  margin-bottom: 16px;
   position: relative;
-}
-
-.upnext-btn {
-  margin-top: auto;
-  align-self: flex-start;
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.upnext-btn svg {
-  width: 14px;
-  height: 14px;
 }
 
 /* ── Calendar ── */
@@ -1011,24 +996,27 @@ a:hover {
   color: var(--text-muted);
 }
 
-.event-join {
-  font-size: 13px;
+.event-status {
+  font-size: 12px;
   font-weight: 500;
-  color: var(--purple-light);
-  display: flex;
-  align-items: center;
-  gap: 6px;
   margin-left: auto;
+  padding: 3px 10px;
+  border-radius: 100px;
 }
 
-.event-join svg {
-  width: 14px;
-  height: 14px;
-  transition: transform 0.2s;
+.event-status.upcoming {
+  color: var(--purple-light);
+  background: var(--purple-glow);
 }
 
-.event-join:hover svg {
-  transform: translateX(3px);
+.event-status.live {
+  color: #22c55e;
+  background: rgba(34, 197, 94, 0.12);
+}
+
+.event-status.ended {
+  color: var(--text-muted);
+  background: rgba(92, 92, 110, 0.12);
 }
 
 .no-events {
