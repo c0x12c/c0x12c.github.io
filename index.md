@@ -23,6 +23,42 @@ bundle exec jekyll serve
 
 Visit `http://localhost:4000` to preview the site.
 
+## Customizing the Theme
+
+This site uses the [Architect](https://github.com/pages-themes/architect) theme via `remote_theme` in `_config.yml`.
+
+### Overriding Styles
+
+Create `assets/css/style.scss` to add custom styles on top of the theme defaults:
+
+```scss
+---
+---
+
+@import "jekyll-theme-architect";
+
+// Your custom styles below
+```
+
+### Overriding Layouts
+
+To customize the HTML layout, copy the theme's [default layout](https://github.com/pages-themes/architect/blob/master/_layouts/default.html) into `_layouts/default.html` and edit it.
+
+### Adding Pages
+
+Create new `.md` files in the root directory with front matter:
+
+```yaml
+---
+layout: default
+title: My Page
+---
+```
+
+### Configuration
+
+Site-wide settings are in `_config.yml`. See the [Jekyll configuration docs](https://jekyllrb.com/docs/configuration/) and the [Architect theme README](https://github.com/pages-themes/architect#readme) for available options.
+
 ## Contributing
 
 We welcome contributions from the community. Please follow the guidelines below.
