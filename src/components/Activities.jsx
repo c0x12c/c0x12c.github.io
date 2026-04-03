@@ -20,7 +20,7 @@ const CATEGORY_LABELS = {
   other: 'Other',
 }
 
-const API_URL = 'https://service-insight.platform.spartan-dev.io/api/v1/public/activities'
+const API_URL = 'https://api.c0x12c.com/api/v1/public/activities'
 
 function formatDate(dateStr) {
   return new Date(dateStr).toLocaleDateString('en-US', {
